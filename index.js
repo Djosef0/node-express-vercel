@@ -31,16 +31,16 @@ app.use("/api/users", userRoute);
 app.use("/api/clothers", clotherRoute);
 app.use("/api/lists", listRoute);
 
-app.use(express.static(path.join(__dirname, "./client/build")));
+// app.use(express.static(path.join(__dirname, "./client/build")));
 
-app.get('*', function(_, res) {
-  res.sendFile(path.join(__dirname, './client/build/index.html')),
-  function (err){
-    if(err){
-      res.status(500).send(err);
-    }
-  }
-});
+// app.get('*', function(_, res) {
+//   res.sendFile(path.join(__dirname, './client/build/index.html')),
+//   function (err){
+//     if(err){
+//       res.status(500).send(err);
+//     }
+//   }
+// });
 
 app.listen(process.env.PORT || 8800, () => {
   console.log("Backend server is running!");
